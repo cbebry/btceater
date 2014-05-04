@@ -4,14 +4,6 @@ var Hapi = require('hapi');
 var server = Hapi.createServer('0.0.0.0', 7777);
 
 server.route({
-    method: 'GET',
-    path: '/hello',
-    handler: function (request, reply) {
-
-        reply('hello world');
-    }
-});
-server.route({
 	method: "GET",
 	path: "/",
 	config: {
@@ -27,22 +19,6 @@ server.route({
 		}
 	}
 });
-/*
-server.route({
-	method: "GET",
-	path: "/{path*}",
-	config: {
-		handler: {
-			directory: {
-				path: "./static/",
-				listing: false,
-				redirectToSlash:true
-			}
-		},
-		auth: false
-	}
-});
-*/
 // Start the server
 server.start();
 console.log('up');
